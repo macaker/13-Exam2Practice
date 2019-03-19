@@ -3,8 +3,8 @@ PRACTICE Exam 2, practice_problem 2.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Emily Macak.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -44,7 +44,7 @@ def main():
 def run_test_practice_problem2a():
     """ Tests the   practice_problem2a  function. """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  practice_problem2a  function defined below.
     #   Include at least **   4    ** tests that, taken together,
     #   would form a    ** REASONABLY GOOD test set **
@@ -58,7 +58,14 @@ def run_test_practice_problem2a():
     print('--------------------------------------------------')
     print('Testing the   practice_problem2a   function:')
     print('--------------------------------------------------')
-
+    print([8, 16, 11, -14, 14])
+    practice_problem2a([2, 10, 5, -20, 8], 6)
+    print([3,11,6,-19,9])
+    practice_problem2a([2, 10, 5, -20, 8], 1)
+    print([4,12,7,-18,10])
+    practice_problem2a([2, 10, 5, -20, 8], 2)
+    print([5,13,8,-17,11])
+    practice_problem2a([2, 10, 5, -20, 8], 3)
 
 def practice_problem2a(sequence, delta):
     """
@@ -79,14 +86,18 @@ def practice_problem2a(sequence, delta):
       :type delta:    int
     """
     ###########################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     WRITE THE TESTS FIRST (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   5 minutes.
     ###########################################################################
-
+    seq = []
+    for k in range(len(sequence)):
+        value = sequence[k] + delta
+        seq = seq + [value]
+    print(seq)
 
 def run_test_practice_problem2b():
     """ Tests the   practice_problem2b  function. """
@@ -166,7 +177,6 @@ def run_test_practice_problem2b():
     # SUMMARY of test results:
     print_summary_of_test_results(test_results)
 
-
 def practice_problem2b(sequence):
     """
     What comes in:
@@ -187,13 +197,24 @@ def practice_problem2b(sequence):
       :type sequence: [str]
     """
     ###########################################################################
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   10 minutes.
     ###########################################################################
+    seq = []
+    my_list = ''
+    for k in range(0, len(sequence)):
+        seq = sequence[k]
+        for z in range(len(seq)):
+            if z < 1:
+                my_list= my_list + seq[z]
+    return my_list
+
+        
+
 
 
 ###############################################################################
@@ -201,11 +222,10 @@ def practice_problem2b(sequence):
 # Do NOT change it.  You do NOT have to do anything with it.
 ###############################################################################
 
-def print_expected_result_of_test(arguments, expected,
-                                  test_results, format_string, suffix=''):
+def print_expected_result_of_test(arguments, expected, test_results, format_string,
+                                 suffix=''):
     testing_helper.print_expected_result_of_test(arguments, expected,
-                                                 test_results, format_string,
-                                                 suffix)
+                                                 test_results, format_string,suffix)
 
 
 def print_actual_result_of_test(expected, actual, test_results,
